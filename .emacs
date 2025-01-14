@@ -29,5 +29,18 @@
 (global-set-key (kbd "S-C-<down>")  'shrink-window)
 (global-set-key (kbd "S-C-<up>")    'enlarge-window)
 
-;; Magit
+;; Eglot Booster (more speed)
+(use-package eglot-booster
+	:after eglot
+	:config	(eglot-booster-mode))
 
+;; Undo-Tree
+(global-undo-tree-mode)
+
+;; MELPA
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
