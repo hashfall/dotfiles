@@ -1,0 +1,6 @@
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(global-display-line-numbers-mode)
+(set-frame-font "MesloLGS NF 13" nil t)
+(windmove-default-keybindings 'meta)
