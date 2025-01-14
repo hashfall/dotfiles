@@ -1,18 +1,33 @@
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruber-darker))
- '(custom-safe-themes
-   '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" default))
- '(package-selected-packages '(gruber-darker-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; Get rid of toolbars, scroll bar and default splash screen
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(setq inhibit-startup-message t) 
+(setq initial-scratch-message nil)
+
+;; Line numbers stuff
+(global-display-line-numbers-mode)
+(setq display-line-numbers 'relative)
+
+;; A theme
+(set-frame-font "MesloLGS NF 13" nil t)
+
+;; Move around windows using M-[Arrow-Keys]
+(windmove-default-keybindings 'meta)
+
+;; Enable Ido
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+ 
+;; Resizing windows
+(global-set-key (kbd "S-C-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>")  'shrink-window)
+(global-set-key (kbd "S-C-<up>")    'enlarge-window)
+
+;; Magit
+
